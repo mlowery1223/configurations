@@ -5,6 +5,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'scrooloose/nerdtree'
 call vundle#end()
 
 set backspace=2
@@ -61,3 +62,6 @@ imap jj <Esc>
 imap jl <End>
 imap hh <Home>
 
+" *** Nerdtree *** "
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
